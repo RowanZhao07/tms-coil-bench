@@ -1,0 +1,18 @@
+{
+  "Subject01.msh": {
+    "bytes": 184786547,
+    "sha256": "d8eb811354f715e8930954e1e799edd3fad2b17a258baf41ccb8e5fc93b17381"
+  },
+  "segmentation/labeling.nii.gz": {
+    "bytes": 746323,
+    "sha256": "649d0e4d04afd39a9c66a9ed684ab43ecad18ff0e730d25f6d89e83c93c93ce0"
+  },
+  "segmentation/labeling_LUT.txt": {
+    "bytes": 2490,
+    "sha256": "8ccb6be9e7000e60fe27b9553227fa5b344c6f213ec1f609eeb3b2fca59d69ca"
+  },
+  "T1.nii.gz": {
+    "bytes": 9217970,
+    "sha256": "84f21eac03ec73112f41a3ac86dfbc92f0ff067a9e5343e3b43f9426648fbcc7"
+  }
+}

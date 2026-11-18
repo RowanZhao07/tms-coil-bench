@@ -1,12 +1,14 @@
-# TMS Coil Bench · 稀疏磁场测量与线圈摆位校准
+# TMS Coil Bench · 线圈摆位、稀疏磁场测量与深部靶区电场
 
 经颅磁刺激（TMS）用线圈中的脉冲电流产生变化的磁场，在导电组织中感应出电场。重新安装线圈后，同一个磁场探头读数变小了，可能是线圈离探头更远，也可能是驱动电流或采集增益变了。如果只允许测六个位置，怎样分清这两种原因？
 
-我们用十四类绕组建立磁场基准，结合八个研究团队的公开测量检验模型和校准方法，再从少量读数估计摆位修正。仓库提供 MATLAB 求解与反演代码、独立有限元计算、逐点数据和可重绘图件。
+我们用十四类绕组建立磁场基准，结合八个研究团队的公开测量检验模型和校准方法，再从少量读数估计摆位修正。我们也把 H1、八字和双锥线圈放到同一名受试者的 MRI 头模上，检验空气场排序能否预测左丘脑内的感应电场。仓库提供 MATLAB 求解与反演代码、独立有限元计算、逐点数据和可重绘图件。
 
 在一项有作者更正记录的八字线圈 MRI 实验中，固定公开电流，从六个点估出的轴向修正为 **32.56 mm**，与两版导航变换之差相差 **0.29 mm**。在另一只线圈的三轴扫描回放中，用已有扫描面的残差辅助选点，恢复人为错标位置的平均误差为 **0.124 mm**；若目标是预测整片磁场，固定对称六点的误差略低。两个数字分别描述一次已知配准错误和一组受控错标实验。
 
-[绕组与求解图册](figures/core/README.md) · [跨实验室测量图册](figures/measurements/README.md) · [摆位与消融图册](figures/methods/README.md) · [复现入口](#reproduce) · [文献与数据](#sources)
+**深部电场结果。** 在同一名受试者的左丘脑，H1、双锥和八字的平均总电场分别为 **10.72、2.23 和 0.65 V/m**。三者的空气磁场也按这个次序排列，但两只线圈之间的差距取决于观测的是磁场还是脑组织中的电场。
+
+[三种线圈的脑内对照](#deep-field) · [绕组与求解图册](figures/core/README.md) · [跨实验室测量图册](figures/measurements/README.md) · [摆位与消融图册](figures/methods/README.md) · [复现入口](#reproduce) · [文献与数据](#sources)
 
 ## 1 · 从绕组形状算出探头读数
 
@@ -131,7 +133,39 @@ $$
 
 每行都保留仪器、原始单位和校准条件。两篇复用同次台架测量的论文只算一组；读图均值也与原始波形分开计数。对深部刺激的讨论以导电头模中的 $E$ 为依据，当前十四类空气场数据支持指定工况下的 $B$ 比较。[八组测量图与逐图解读](figures/measurements/README.md) · [数据清单和再分析方法](external_measurements/README.md)
 
-## 7 · 如何使用这些结果
+<a id="deep-field"></a>
+
+## 7 · 空气磁场最强的线圈，在左丘脑内电场也最强吗？
+
+我们选取 FieldTrip 公开的 Subject01 个体 T1 头模 [19–20]。在看场值前固定左丘脑中心，将 5 mm 球与该个体的左丘脑和灰质取交集，得到 **62 个四面体、508.75 mm³**。靶心沿头部上方到头皮为 **80.00 mm**。三种线圈沿用球面实验的绕组和朝向定义，对准同一头皮锚点，各自平移至绕组中心线距皮面最近 **12.00 mm**。H1 使用固定形状，八字与双锥使用理想化几何。
+
+![同三种绕组在球面空气基准、个体头皮摆位空气对照、个体脑内靶区的绝对场值](figures/brain/target_comparison.png)
+
+**图 7｜同一行始终是同一只线圈。** 从左到右先读旧球面下 30 mm 的空气磁场，再读真实头皮摆位、左丘脑位置的空气磁场，最后才看相同位置的脑内电场。前两栏分别代表一个测点和一个小区域，最后两栏使用完全相同的四面体。磁场以 mT 表示，电场以 V/m 表示，各栏分别读数。[排版 PDF](figures/brain/target_comparison.pdf) · [同深度球面对照与空气场](brain_field/results/air_field.csv)
+
+空气对照给定 1,000 A 电流。SimNIBS 4.6.0 电场计算给定相同的电流变化率 $\dot I=100\ \mathrm{A}/\mu\mathrm{s}$。初级电场由线圈产生，组织中的电荷重新分布会增加由电势 $\phi$ 描述的分量。靶区指标为单元体积 $V_i$ 加权的总电场模长：
+
+$$
+\mathbf E=-\partial_t\mathbf A-\nabla\phi,\qquad
+\nabla\cdot(\sigma\mathbf E)=0,\qquad
+\bar E_R=\frac{\sum_{i\in R}V_i\lVert\mathbf E_i\rVert}{\sum_{i\in R}V_i}.
+$$
+
+| 线圈 | 靶区空气磁场均值（mT） | 靶区初级场均值（V/m） | 靶区总电场均值（V/m） | 双侧大脑皮层 P99（V/m） | 靶区均值 / 皮层 P99 |
+|---|---:|---:|---:|---:|---:|
+| H1 | 21.91 | 50.18 | **10.72** | 123.45 | 8.69% |
+| 双锥 | 4.04 | 30.86 | **2.23** | 66.25 | 3.36% |
+| 八字 | 2.61 | 10.20 | **0.65** | 29.87 | 2.17% |
+
+**按左丘脑绝对电场排序，为 H1 ＞ 双锥 ＞ 八字。** 它与空气磁场排序一致。双锥相对于八字的空气磁场为 **1.55 倍**，脑内总电场为 **3.43 倍**。把靶区半径改为 3 mm 和 7.5 mm 后，总电场的先后顺序也相同。[逐单元场向量](brain_field/results/target_elements.csv) · [半径敏感性](brain_field/results/roi_radius.csv)
+
+![穿过左丘脑中心的个体 MRI 冠状面及三种线圈共用色标的脑内电场](figures/brain/coronal_fields.png)
+
+**图 8｜左上先找靶区，再用同一把色尺看三只线圈。** 左上是这名受试者的 MRI，青色线描出整块左丘脑，白色描边标出切面穿过的靶区单元。其余三格显示同一切面灰质和白质内的总电场。表中的皮层 P99 是双侧大脑皮层中按体积计有 99% 不超过的场强，用它可以比较取得一定深部场强时伴随的皮层暴露。依靶区均值与皮层 P99 的比值，顺序为 **H1 ＞ 双锥 ＞ 八字**。[排版 PDF](figures/brain/coronal_fields.pdf) · [图册和切片说明](figures/brain/README.md)
+
+本次复用同一张 4,734,021 个四面体的网格，三只线圈串行求解。在配备 RTX 4060 Laptop 和 32 GB 内存的电脑上，CPU 有限元程序从读网格到写出三组场实测 **118.45 秒**，进程峰值工作集 **3.39 GiB**。这些结果适用于这一个头模、这个左丘脑靶区及这组朝向和激励；它们衡量场强，不能据此判定神经元激活或临床疗效。[实验设置与复跑](brain_field/README.md) · [求解残差与运行记录](brain_field/results/solver_run.json)
+
+## 8 · 如何使用这些结果
 
 - **比较线圈几何。** 同时说明电流、参考面、观测点和指标；图纸中未给出的尺寸、匝数或折角见[几何来源与假设](research/geometry_research.md)。
 - **检查摆位。** 有独立电流测量时，先约束倍率；用没参加拟合的位置同时报告百分比误差和带单位的 RMSE。把一个扫描面的误差模式借给另一平面前，需检查两者的空间对应关系。
@@ -140,11 +174,12 @@ $$
 
 <a id="reproduce"></a>
 
-## 8 · 浏览、取图与复现
+## 9 · 浏览、取图与复现
 
 | 需要什么 | 从这里开始 |
 |---|---|
 | 一张可以排版的图，以及图中变量的含义 | [完整图件索引与重绘方法](figures/README.md)。各图册将 PNG、紧随图后的中文图解、PDF 和数值来源放在一起。 |
+| 在一名受试者的左丘脑比较三种线圈 | [头模、靶区、统一摆位与 SimNIBS 求解步骤](brain_field/README.md) · [脑内电场图册](figures/brain/README.md) |
 | 一只线圈的坐标、假设和指标 | [几何清单](geometry_manifest.json) · [MATLAB 线元求解](matlab/field_segments.m) · [指标总表](results/metrics.csv) |
 | 核对旧版、新版、只改 z 平移的差别 | [MRI 原始对照与本地复算](placement_pilot/public_benchmark/matched_figure8/README.md) |
 | 独立复算三维场或球面摆位 | [放置基准与有限元](placement_pilot/README.md) · [三维双锥收敛](placement_pilot/fem3d/README.md) |
@@ -194,6 +229,12 @@ GPU 选项需要 Parallel Computing Toolbox 和兼容的 NVIDIA 显卡。去掉 
 16. 刘芙妍、颜冰，2022，《磁偶极子阵列模型的适用性研究与优化分析》。借鉴误差来源分解。[论文](https://doi.org/10.7498/aps.71.20212223)
 17. 王锴松等，《地磁模拟法测量舰船感应磁场的数值模拟》。借鉴解析解、数值解和台架读数的分步核对。[论文](https://doi.org/10.12382/bgxb.2021.0110)
 18. 陈功轩等，2026，《一种面向应用的电性等效源舰船磁场建模方法》，第 070803-11 页。借鉴建模平面与异深度检验平面分离的设计。[论文](https://doi.org/10.7498/aps.75.20251595)
+
+### 个体 MRI、头部有限元与深度比较
+
+19. FieldTrip 团队，Subject01。T1 加权个体 MRI 的 RAS 转换、CHARM 组织分割、网格和原生解剖标签。[头模构建说明](https://www.fieldtriptoolbox.org/getting_started/othersoftware/simnibs/) · [数据集下载目录](https://download.fieldtriptoolbox.org/getting_started/simnibs/m2m_Subject01/) · [左右脑结构标签](https://download.fieldtriptoolbox.org/getting_started/simnibs/m2m_Subject01/segmentation/labeling_LUT.txt)
+20. Puonti O 等，2020。*Accurate and robust whole-head segmentation from magnetic resonance images for individualized head modeling*。[论文](https://doi.org/10.1016/j.neuroimage.2020.117044) · [SimNIBS 4.6.0](https://github.com/simnibs/simnibs/releases/tag/v4.6.0) · [电场驱动与单位](https://simnibs.github.io/simnibs/build/html/faq.html) · [有限元靶区分析](https://simnibs.github.io/simnibs/build/html/tutorial/analysis.html)
+21. Deng Z-D、Lisanby SH、Peterchev AV，2013。*Electric field depth–focality tradeoff in transcranial magnetic stimulation: simulation comparison of 50 coil designs*。[论文](https://doi.org/10.1016/j.brs.2012.02.005)
 
 ### 软件、制图与图纸
 

@@ -1,0 +1,33 @@
+{
+  "subject": "FieldTrip Subject01",
+  "space": "subject MRI world RAS, mm",
+  "target": "left thalamus",
+  "target_label": 10,
+  "gm_tissue_tag": 2,
+  "anatomical_centroid_ras_mm": [
+    -7.91401522560072,
+    -20.659243205876237,
+    14.816787518625782
+  ],
+  "center_ras_mm": [
+    -7.404017628970394,
+    -20.078998145526697,
+    15.235252817261696
+  ],
+  "radius_mm": 5.0,
+  "center_rule": "label-10 voxel centre nearest to the centroid of all label-10 voxel centres",
+  "element_rule": "tetrahedron barycentre inside sphere, mesh GM, nearest anatomical voxel has label 10",
+  "cortical_reference": "mesh GM, nearest anatomical voxel has label 3 or 42 (bilateral cerebral cortex)",
+  "roi_element_count": 62,
+  "roi_volume_mm3": 508.7464598693972,
+  "cortical_element_count": 1203847,
+  "cortical_volume_mm3": 534905.4911866235,
+  "thalamus_label_voxels": 2910,
+  "thalamus_mesh_gm_volume_mm3": 5617.004590698141,
+  "topology_sha256": "3a668ac2e9445eba421cbba7d10f718d8e12ee537f7d9ce6120caecf7edc6cf0",
+  "sensitivity_radii_mm": [
+    3.0,
+    5.0,
+    7.5
+  ]
+}
