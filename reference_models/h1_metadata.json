@@ -1,0 +1,177 @@
+{
+  "source_url": "https://raw.githubusercontent.com/simnibs/simnibs/fde509f6f8de38a4b03947944cf7ee93b8bebabe/simnibs/resources/coil_models/flexible_coils/Brainsway_H1.tcd",
+  "source_sha256": "92f45e0a51ab9e46dfa37f037b4281ba3453888e37dbc60988baa3486e4b33db",
+  "retrieved_date": "2026-11-18",
+  "license": "GPL-3.0; see SIMNIBS_LICENSE.txt",
+  "model_version": "1.0.o",
+  "coordinate_unit": "m",
+  "interpretation": "midpoint and dl from official LineSegmentElements implementation; no deformations applied; original coordinate system retained",
+  "segments": 14895,
+  "groups": [
+    {
+      "group_id": 0,
+      "name": "H1_no_def",
+      "segments": 9449,
+      "deformations": []
+    },
+    {
+      "group_id": 1,
+      "name": "H1_rot_left",
+      "segments": 516,
+      "deformations": [
+        0
+      ]
+    },
+    {
+      "group_id": 2,
+      "name": "H1_rot_right",
+      "segments": 506,
+      "deformations": [
+        1
+      ]
+    },
+    {
+      "group_id": 3,
+      "name": "H1_rot_left",
+      "segments": 462,
+      "deformations": [
+        2
+      ]
+    },
+    {
+      "group_id": 4,
+      "name": "H1_rot_right",
+      "segments": 446,
+      "deformations": [
+        3
+      ]
+    },
+    {
+      "group_id": 5,
+      "name": "H1_rot_left",
+      "segments": 415,
+      "deformations": [
+        4
+      ]
+    },
+    {
+      "group_id": 6,
+      "name": "H1_rot_right",
+      "segments": 394,
+      "deformations": [
+        5
+      ]
+    },
+    {
+      "group_id": 7,
+      "name": "H1_rot_left",
+      "segments": 360,
+      "deformations": [
+        6
+      ]
+    },
+    {
+      "group_id": 8,
+      "name": "H1_rot_right",
+      "segments": 331,
+      "deformations": [
+        7
+      ]
+    },
+    {
+      "group_id": 9,
+      "name": "H1_rot_left",
+      "segments": 321,
+      "deformations": [
+        8
+      ]
+    },
+    {
+      "group_id": 10,
+      "name": "H1_rot_right",
+      "segments": 266,
+      "deformations": [
+        9
+      ]
+    },
+    {
+      "group_id": 11,
+      "name": "H1_rot_left",
+      "segments": 258,
+      "deformations": [
+        10
+      ]
+    },
+    {
+      "group_id": 12,
+      "name": "H1_rot_right",
+      "segments": 195,
+      "deformations": [
+        11
+      ]
+    },
+    {
+      "group_id": 13,
+      "name": "H1_rot_left",
+      "segments": 182,
+      "deformations": [
+        12
+      ]
+    },
+    {
+      "group_id": 14,
+      "name": "H1_rot_right",
+      "segments": 89,
+      "deformations": [
+        13
+      ]
+    },
+    {
+      "group_id": 15,
+      "name": "H1_rot_front",
+      "segments": 294,
+      "deformations": [
+        14
+      ]
+    },
+    {
+      "group_id": 16,
+      "name": "H1_rot_front",
+      "segments": 242,
+      "deformations": [
+        15
+      ]
+    },
+    {
+      "group_id": 17,
+      "name": "H1_rot_front",
+      "segments": 169,
+      "deformations": [
+        16
+      ]
+    }
+  ],
+  "bbox_mid_m": [
+    [
+      -0.11879649763514738,
+      -0.1627121318004859,
+      -0.09413812923901198
+    ],
+    [
+      0.07578670110402866,
+      0.04307479999684156,
+      0.08182267362218185
+    ]
+  ],
+  "conductor_length_m": 7.384041853110441,
+  "sum_dl_m": [
+    -0.003345800128199591,
+    0.0026439052401096472,
+    0.0004630638731976564
+  ],
+  "closure_note": "Source line elements are not an exactly closed circuit: summed dl is nonzero. Retain this measured/source limitation; do not silently append a fictitious return conductor.",
+  "references": [
+    "https://simnibs.github.io/simnibs/build/html/documentation/coils.html",
+    "https://doi.org/10.1016/j.brs.2025.05.136"
+  ]
+}

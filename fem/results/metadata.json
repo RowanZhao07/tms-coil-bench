@@ -1,0 +1,13 @@
+{
+  "versions": {
+    "gmsh": "4.15.2",
+    "getdp": "3.5.0"
+  },
+  "R_m": 0.05,
+  "wire_radius_m": 0.001,
+  "current_A": 1000.0,
+  "axis_evaluation_radius_m": 0,
+  "formulation": "axisymmetric transformed A_phi/r FEM; first-order triangles; seven-point quadrature",
+  "boundary": "A_phi/r=0 on finite half-disk outer boundary; natural regularity on symmetry axis",
+  "notes": "Coil J normalized using actual triangular cross-sectional mesh area; finite circular cross-section differs from filament"
+}

@@ -1,0 +1,2 @@
+requested_grids,valid_grids,invalid_grids,fixed_pose_selected,far_pixels,minimum_L2_margin_pp,minimum_RMSE_margin_uT,minimum_noise_to_tie_RMS_uT
+25,25,0,25,5325,314.052371421658,94.1810102080337,48.0347083234867

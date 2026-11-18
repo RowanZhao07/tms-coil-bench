@@ -1,0 +1,12 @@
+{
+  "matlab_version": "25.1.0.2973910 (R2025a) Update 1",
+  "current_A": 1000,
+  "segments_per_turn": 192,
+  "use_gpu": false,
+  "source_document": "Combination magnetic coils drawings, pages 3-4, 9, 16",
+  "elapsed_s": 17.6372085,
+  "completed_local": "2026-11-18 19:26:39",
+  "area_grid_relative_change": 0.011535048802129518,
+  "quadrature_observers_count": 7,
+  "interpretation": "free-space magnetic B field; no tissue E, dose, or clinical inference"
+}

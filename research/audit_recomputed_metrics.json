@@ -1,0 +1,145 @@
+{
+  "max_field_norm_abs_T": 8.673617379884035e-17,
+  "checks": [
+    {
+      "id": "circular",
+      "axis_metric_max_abs_mT": 7.105427357601002e-15,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 9.769962616701378e-15,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 3.8163916471489756e-17
+    },
+    {
+      "id": "h1",
+      "axis_metric_max_abs_mT": 5.684341886080802e-14,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 4.440892098500626e-15,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 0.004289410398551968
+    },
+    {
+      "id": "h1_simplified",
+      "axis_metric_max_abs_mT": 6.394884621840902e-14,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 0.0,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 0.0
+    },
+    {
+      "id": "h1_alternative",
+      "axis_metric_max_abs_mT": 7.815970093361102e-14,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 2.6645352591003757e-15,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 8.441528768080324e-17
+    },
+    {
+      "id": "pediatric_figure8",
+      "axis_metric_max_abs_mT": 3.552713678800501e-15,
+      "peak_abs_mT": 2.842170943040401e-14,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 3.2862601528904634e-14,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 0.0
+    },
+    {
+      "id": "elliptical",
+      "axis_metric_max_abs_mT": 0.0,
+      "peak_abs_mT": 2.842170943040401e-14,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 4.3520742565306136e-14,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 2.3919062776466247e-16
+    },
+    {
+      "id": "double_cone",
+      "axis_metric_max_abs_mT": 3.552713678800501e-15,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 4.884981308350689e-14,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 2.1942709178604383e-17
+    },
+    {
+      "id": "pancake",
+      "axis_metric_max_abs_mT": 5.684341886080802e-14,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 1.7763568394002505e-15,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 5.551115123125783e-17
+    },
+    {
+      "id": "pediatric_circular",
+      "axis_metric_max_abs_mT": 0.0,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 5.5067062021407764e-14,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 5.447031714567174e-16
+    },
+    {
+      "id": "t_coil",
+      "axis_metric_max_abs_mT": 0.0,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 3.108624468950438e-14,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 1.0408340855860843e-16
+    },
+    {
+      "id": "butterfly",
+      "axis_metric_max_abs_mT": 1.4210854715202004e-14,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 4.884981308350689e-14,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 1.1020615097076934e-16
+    },
+    {
+      "id": "figure8_array",
+      "axis_metric_max_abs_mT": 7.105427357601002e-15,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 4.440892098500626e-15,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 4.734873626495502e-17
+    },
+    {
+      "id": "folded_figure8",
+      "axis_metric_max_abs_mT": 3.552713678800501e-15,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 6.661338147750939e-15,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 1.5612511283791264e-17
+    },
+    {
+      "id": "folded_circular",
+      "axis_metric_max_abs_mT": 7.105427357601002e-15,
+      "peak_abs_mT": 0.0,
+      "area_abs_cm2": 0.0,
+      "length_abs_m": 7.105427357601002e-15,
+      "segment_count_matches": true,
+      "bbox_zmax_m": 0.0,
+      "closure_m": 1.59632266715328e-16
+    }
+  ]
+}

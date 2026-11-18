@@ -1,0 +1,3 @@
+coil,source_reference,points,relative_vector_L2
+figure8,results\validation\document_foe_case.csv,5,3.652455567088957e-15
+double_cone,results\fields\double_cone_axis.csv,91,3.009027756155623e-15

@@ -1,0 +1,4 @@
+points,count,relative_L2_percent,mean_abs_point_percent,max_abs_point_percent,in_5pct_band
+all_seven,7,16.9888524244581,10.5573540712118,21.3399573695619,1
+five_reprinted,5,16.9888783482767,11.6416340101713,21.3399573695619,1
+two_additional_from_instrument_report,2,9.09284619360294,7.84665422381295,9.09734745093382,0

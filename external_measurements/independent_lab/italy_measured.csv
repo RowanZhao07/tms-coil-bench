@@ -1,0 +1,8 @@
+point,axial_cm,radial_horizontal_cm,height_cm,measured_peak_uT,published_sim4life_uT
+1,4,0,113,667000,669900
+2,64,0,113,494,520
+3,96,0,113,153,158
+4,128,0,113,63,NaN
+5,0,32,113,1827,2200
+6,0,64,113,251,268
+7,32,0,141,1378,NaN

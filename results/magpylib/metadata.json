@@ -1,0 +1,14 @@
+{
+  "package": "magpylib",
+  "version": "6.3.0",
+  "python": "3.13.5",
+  "numpy": "2.2.5",
+  "mu0_used": 1.2566370614359173e-06,
+  "scipy_codata_mu0": 1.25663706127e-06,
+  "stride": 1,
+  "geometry_count": 14,
+  "total_points": 145292,
+  "elapsed_seconds": 376.62127450000116,
+  "comparison": "Independent software implementation of the same directed-filament model; not FEM",
+  "same_geometry_limitation": "Agreement does not validate uncertain dimensions, source gaps, omitted leads, or clinical effects"
+}

@@ -1,0 +1,11 @@
+{
+  "matlab_version": "25.1.0.2973910 (R2025a) Update 1",
+  "current_A": 1000,
+  "mu0_H_per_m": 1.2566370614359173E-6,
+  "segments_per_turn": 192,
+  "use_gpu": true,
+  "elapsed_s": 68.0595263,
+  "completed_local": "2026-11-18 19:26:21",
+  "coordinate_convention": "all wire endpoints z<=0; observation depth z>0 from wire support plane",
+  "medium": "homogeneous free space; no tissue, eddy current or ferromagnetic material"
+}

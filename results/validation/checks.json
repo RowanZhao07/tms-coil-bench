@@ -1,0 +1,9 @@
+{
+  "linearity_relative_error": 0,
+  "direction_reversal_relative_error": 1.1079397156059942E-16,
+  "gpu_status": "executed",
+  "gpu_relative_error": 0,
+  "document_case_center_separation_m": 0.088,
+  "document_case_center_separation_status": "assumed outer loops tangent; source R0 not numeric",
+  "circle_validation_pass": true
+}

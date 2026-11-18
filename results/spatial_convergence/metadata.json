@@ -1,0 +1,13 @@
+{
+  "use_gpu": true,
+  "coarse_grid": 81,
+  "fine_grid": 161,
+  "fine_spacing_mm": 2.25,
+  "plane_depth_mm": 20,
+  "domain_mm": [
+    -180,
+    180
+  ],
+  "threshold": "half of the peak on each respective grid",
+  "note": "Two observation grids estimate sampling sensitivity; not a rigorous continuum error bound. Main metrics.csv remains the recorded81x81 baseline."
+}

@@ -1,0 +1,366 @@
+[
+  {
+    "id": "circular",
+    "name_en": "Circular",
+    "name_cn": "圆形线圈",
+    "source": "Coil geometry drawings PDF p.1",
+    "note": "Two layers x 9 turns. Centreline radii 17:4.75:55 mm; layer pitch 4.5 mm. With assumed 4-mm conductor OD: clear bore 30 mm, OD 114<115 mm, thickness 8.5<10 mm. Feed and spiral interconnections omitted; closed concentric-turn equivalent.",
+    "segment_count": 3456,
+    "bbox_m": [
+      [
+        -0.055,
+        -0.055,
+        -0.0045000000000000005
+      ],
+      [
+        0.055,
+        0.055,
+        0
+      ]
+    ],
+    "weighted_length_m": 4.071322404081954,
+    "weighted_closure_vector_m": [
+      3.4694469519536142E-18,
+      -8.6736173798840355E-18,
+      0
+    ]
+  },
+  {
+    "id": "h1",
+    "name_en": "H1 (X-ray reconstruction)",
+    "name_cn": "H1线圈",
+    "source": "SimNIBS Brainsway_H1.tcd v1.0.o; commit fde509f6f8de38a4b03947944cf7ee93b8bebabe; Worbs et al. 2025 doi:10.1016/j.brs.2025.05.136",
+    "note": "14895 source line elements, 18 components, default deformations 0 deg. Proper rotation Rx(pi)=diag(1,-1,-1), translation [0.0215046951 -0.059819046 -0.0943584622] m. Endpoint bounding box centred in x/y; uppermost endpoint z=0. This is a common air-field placement, NOT an anatomical fit. Original total dl=[-3.345800,2.643905,0.463064] mm: small source gaps retained, no fictitious return wire added. Source sampling is fixed and is not refined by nPerTurn.",
+    "segment_count": 14895,
+    "bbox_m": [
+      [
+        -0.097291912597014141,
+        -0.10289400695227613,
+        -0.17618195064851477
+      ],
+      [
+        0.097291912597014141,
+        0.10289400695227613,
+        0
+      ]
+    ],
+    "weighted_length_m": 7.3840418531104453,
+    "weighted_closure_vector_m": [
+      -0.0033458001281994922,
+      -0.0026439052401097118,
+      -0.00046306387319744458
+    ]
+  },
+  {
+    "id": "h1_simplified",
+    "name_en": "Simplified H1 (schematic)",
+    "name_cn": "简化H1线圈",
+    "source": "Coil geometry drawings PDF p.2 schematic; dimensions unspecified",
+    "note": "Assumed bilateral 6-loop design. Active arc radii 90..100 mm, 75 deg per side, y=-25..0 mm. Return legs y=55..80 mm, z=-140..-155 mm. Closed 3D loops, opposed left/right circulation reinforces the active arcs. This is an engineering schematic, not a validated Brainsway H1 replica.",
+    "segment_count": 792,
+    "bbox_m": [
+      [
+        -0.096592582628906826,
+        -0.025,
+        -0.155
+      ],
+      [
+        0.096592582628906826,
+        0.08,
+        0
+      ]
+    ],
+    "weighted_length_m": 5.9405290948882179,
+    "weighted_closure_vector_m": [
+      4.9960036108132044E-16,
+      0,
+      6.591949208711867E-17
+    ]
+  },
+  {
+    "id": "h1_alternative",
+    "name_en": "Alternative H1 (schematic)",
+    "name_cn": "另类H1线圈",
+    "source": "Coil geometry drawings PDF p.3 schematic; dimensions unspecified",
+    "note": "Assumed 8 closed transverse loops. Active arch radii 84..98 mm, +/-72 deg, y=-28..0 mm; return y=60..88 mm and z=-150..-171 mm. Qualitative arch/rectangular-return interpretation only, not an identified commercial H1 geometry.",
+    "segment_count": 784,
+    "bbox_m": [
+      [
+        -0.09320353859692504,
+        -0.028,
+        -0.17099265121612126
+      ],
+      [
+        0.09320353859692504,
+        0.088,
+        0
+      ]
+    ],
+    "weighted_length_m": 5.3175992985721123,
+    "weighted_closure_vector_m": [
+      -3.3306690738754696E-16,
+      0,
+      2.2551405187698492E-17
+    ]
+  },
+  {
+    "id": "pediatric_figure8",
+    "name_en": "Pediatric figure-of-eight",
+    "name_cn": "儿童8字线圈",
+    "source": "Coil geometry drawings PDF p.9 (primary); conflicting larger drawing p.3-4",
+    "note": "4 turns per lobe per layer, 4 layers, centres +/-35 mm. Radii [17,21.5,26,30.5] mm and layer pitch 4.5 mm assume 4-mm OD: bore30, lobe OD65<70, width135<136, thickness17.5<21 mm. Opposite lobe current. Earlier p.3-4 drawing instead has centre distance92 and OD90/bore25; it is a separate larger variant, not silently merged.",
+    "segment_count": 6144,
+    "bbox_m": [
+      [
+        -0.0655,
+        -0.0305,
+        -0.0135
+      ],
+      [
+        0.0655,
+        0.0305,
+        0
+      ]
+    ],
+    "weighted_length_m": 4.7750077578738725,
+    "weighted_closure_vector_m": [
+      -3.4694469519536142E-18,
+      8.6736173798840355E-19,
+      0
+    ]
+  },
+  {
+    "id": "elliptical",
+    "name_en": "Elliptical / racetrack",
+    "name_cn": "椭圆线圈",
+    "source": "Coil geometry drawings PDF p.5",
+    "note": "Racetrack interpretation: two straight sections of 80 mm plus semicircular ends. Assumed 8 turns x 2 layers, end radii17:4:45 mm, pitch4.5 mm between layers. 4-mm OD gives inner30x110 and outer94x174 mm, within <100x175 mm; thickness8.5<12 mm. Turn count is a modelling choice because the drawing does not state it.",
+    "segment_count": 3072,
+    "bbox_m": [
+      [
+        -0.045,
+        -0.0849938487246611,
+        -0.0045000000000000005
+      ],
+      [
+        0.045,
+        0.0849938487246611,
+        0
+      ]
+    ],
+    "weighted_length_m": 5.6763179095632,
+    "weighted_closure_vector_m": [
+      -3.8163916471489756E-17,
+      3.0531133177191805E-16,
+      0
+    ]
+  },
+  {
+    "id": "double_cone",
+    "name_en": "Double cone",
+    "name_cn": "双锥线圈",
+    "source": "Coil geometry drawings PDF p.6",
+    "note": "5 turns x 2 layers per wing; radii31.1..50 mm, nominal unbent centres +/-52 mm. Rigid wings tilted42.5 deg from plane -> included95 deg. 4-mm OD gives clear bore58.2>58 mm and OD104<107 mm. Drawing also marks overall190 mm without a unique hinge/centre definition; centre distance104 mm is assumed, so this model does not claim to reproduce that overall dimension.",
+    "segment_count": 3840,
+    "bbox_m": [
+      [
+        -0.075202288354632663,
+        -0.05,
+        -0.0708767687772116
+      ],
+      [
+        0.075202288354632663,
+        0.05,
+        0
+      ]
+    ],
+    "weighted_length_m": 5.0954359100469739,
+    "weighted_closure_vector_m": [
+      -2.6020852139652106E-17,
+      -1.7347234759768071E-18,
+      -1.214306433183765E-17
+    ]
+  },
+  {
+    "id": "pancake",
+    "name_en": "Bottom pancake",
+    "name_cn": "盘底线圈",
+    "source": "Coil geometry drawings PDF p.7",
+    "note": "18 turns x 1 layer; centreline radii7:4:75 mm. 4-mm tube OD gives clear bore10 mm, outer radius77 mm (OD154<170 mm), matching the drawing handwritten outer-radius interpretation. Source nominal inductance20+/-3 uH is not imposed or verified by this B-field model.",
+    "segment_count": 3456,
+    "bbox_m": [
+      [
+        -0.075,
+        -0.075,
+        0
+      ],
+      [
+        0.075,
+        0.075,
+        0
+      ]
+    ],
+    "weighted_length_m": 4.6367838490933444,
+    "weighted_closure_vector_m": [
+      -1.5612511283791264E-17,
+      3.4694469519536142E-18,
+      0
+    ]
+  },
+  {
+    "id": "pediatric_circular",
+    "name_en": "Pediatric circular",
+    "name_cn": "儿童圆形线圈",
+    "source": "Coil geometry drawings PDF p.8",
+    "note": "4 layers x 7.5 effective turns: 7 closed unit-current rings plus outermost closed ring weighted0.5 in each layer (30 ampere-turns at1A). Radii9.5:4:37.5 mm; layer pitch4.5 mm. 4-mm OD gives bore15, OD79<80, thickness17.5<20 mm. The 0.5 weighting is an explicit ampere-turn surrogate, not the real 7.5-turn spiral/return routing.",
+    "segment_count": 6144,
+    "bbox_m": [
+      [
+        -0.0375,
+        -0.0375,
+        -0.0135
+      ],
+      [
+        0.0375,
+        0.0375,
+        0
+      ]
+    ],
+    "weighted_length_m": 4.2535266474745725,
+    "weighted_closure_vector_m": [
+      -1.7780915628762273E-17,
+      1.7347234759768071E-18,
+      0
+    ]
+  },
+  {
+    "id": "t_coil",
+    "name_en": "T-type (winding equivalent)",
+    "name_cn": "T型线圈",
+    "source": "Coil geometry drawings PDF p.10; p.9 repeats a different drawing under the heading",
+    "note": "Two planar lobes, opposed current, centres +/-46 mm, assumed9 turns x2 layers, radii14.5..44.5 mm; radial pitch3.75 mm and layer pitch4.5 mm. Conductor OD is not labelled on p.10: assumed3 mm gives bore26, totalwidth184<185 mm and thickness7.5<12 mm, without radial overlap. Actual T-shaped out-of-plane leads shown on p.10 are omitted because complete supply/return routing is missing. This closed-turn winding equivalent cannot distinguish handle-only variants.",
+    "segment_count": 6912,
+    "bbox_m": [
+      [
+        -0.0905,
+        -0.0445,
+        -0.0045000000000000005
+      ],
+      [
+        0.0905,
+        0.0445,
+        0
+      ]
+    ],
+    "weighted_length_m": 6.6724450511342948,
+    "weighted_closure_vector_m": [
+      -1.0408340855860843E-17,
+      -1.7347234759768071E-18,
+      0
+    ]
+  },
+  {
+    "id": "butterfly",
+    "name_en": "Butterfly (two-stage folded)",
+    "name_cn": "蝶形线圈",
+    "source": "Coil geometry drawings PDF p.11",
+    "note": "5 turns x2 layers per lobe; radii31.1..50 mm, nominal unbent centre distance106 mm. Central wings10 deg (included160 deg); outer halves add43 deg (137-deg internal bend), hinge at lobe centre53 mm. This is an explicitly chosen interpretation of the compound-bend sketch. 4-mm OD gives bore58.2>58 and lobeOD104<105 mm; finite casing/clearances are not modelled.",
+    "segment_count": 3840,
+    "bbox_m": [
+      [
+        -0.082285562067249449,
+        -0.05,
+        -0.053114184385711166
+      ],
+      [
+        0.082285562067249449,
+        0.05,
+        0
+      ]
+    ],
+    "weighted_length_m": 5.0954359100469713,
+    "weighted_closure_vector_m": [
+      -1.0408340855860843E-17,
+      -1.7347234759768071E-18,
+      -1.7347234759768071E-17
+    ]
+  },
+  {
+    "id": "figure8_array",
+    "name_en": "Figure-of-eight array",
+    "name_cn": "8字阵列线圈",
+    "source": "Coil geometry drawings PDF p.12 schematic; no dimensions/angles/current phases specified",
+    "note": "Assumed 3 mirror-symmetric pairs fanning at0,35,65 deg. Each lobe6 nested ellipses, fixed centre44 mm from origin, semi-axes44-4k and28-3k mm, k0..5. Mirrors reverse circulation. All three pair channels are synchronous equal amplitude; this is one explicit array drive, not a uniquely prescribed optimal array. Crossing filament intersections are idealized; no manufacturing clearance claimed.",
+    "segment_count": 6912,
+    "bbox_m": [
+      [
+        -0.088,
+        -0.028,
+        0
+      ],
+      [
+        0.088,
+        0.081473000621684291,
+        0
+      ]
+    ],
+    "weighted_length_m": 6.2593569578853945,
+    "weighted_closure_vector_m": [
+      -8.6736173798840355E-19,
+      -3.2959746043559335E-17,
+      0
+    ]
+  },
+  {
+    "id": "folded_figure8",
+    "name_en": "Folded figure-of-eight",
+    "name_cn": "折叠8字线圈",
+    "source": "Coil geometry drawings PDF p.13-15 qualitative fold equations",
+    "note": "Assumed6 turns/lobe, radii20..44 mm, centres +/-46 mm; outer hinges x=+/-56 mm (dL=dR=10 mm from respective centres), betaL=betaR=45 deg away from observation side. Inner parts remain planar. Opposite lobe currents as p.14. No metric dimensions or fold angles are specified in the document.",
+    "segment_count": 2304,
+    "bbox_m": [
+      [
+        -0.080041630560342608,
+        -0.044,
+        -0.02404163056034261
+      ],
+      [
+        0.080041630560342608,
+        0.044,
+        0
+      ]
+    ],
+    "weighted_length_m": 2.4120247951714422,
+    "weighted_closure_vector_m": [
+      6.9388939039072284E-18,
+      -3.4694469519536142E-18,
+      -8.6736173798840355E-19
+    ]
+  },
+  {
+    "id": "folded_circular",
+    "name_en": "Folded circular",
+    "name_cn": "折叠圆形线圈",
+    "source": "Coil geometry drawings PDF p.16 schematic; no metric dimensions",
+    "note": "Uses circular reference radii17..55 mm,9 turns x2 layers; folds beyond x=+/-20 mm at beta1=beta2=30 deg away from observation side. Inner portion remains planar. Radius, hinge distances and fold angles are explicit assumptions; source only supplies symbolic d1,d2,beta1,beta2.",
+    "segment_count": 3456,
+    "bbox_m": [
+      [
+        -0.050310889132455357,
+        -0.055,
+        -0.022
+      ],
+      [
+        0.050310889132455357,
+        0.055,
+        0
+      ]
+    ],
+    "weighted_length_m": 4.070014481151393,
+    "weighted_closure_vector_m": [
+      -1.7347234759768071E-17,
+      -8.6736173798840355E-18,
+      -3.4694469519536142E-18
+    ]
+  }
+]

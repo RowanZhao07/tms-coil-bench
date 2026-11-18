@@ -1,0 +1,34 @@
+# Local execution environment, downloaded sources and scratch work
+/.venv/
+/tools/
+/tmp/
+__pycache__/
+*.py[cod]
+*.asv
+*.log
+.env
+.env.*
+*.zip
+Thumbs.db
+.DS_Store
+
+# Full solver volumes and generated Gmsh viewers can be regenerated from source.
+/fem/results/**/*.pos
+/fem/results/**/*.pre
+/fem/results/**/*.res
+/fem/results/**/*.msh
+/results/gmsh_views/
+
+# Publish the regenerated figures from the figures/ tree. MATLAB runs also
+# produce diagnostic plots beside the numeric output on each workstation.
+*.png
+*.pdf
+!/figures/**/*.png
+!/figures/**/*.pdf
+
+# Internal one-off packaging, workstation diagnostics and source PDF extracts.
+/experiment_manifest.json
+/simulation/summarize_and_package.py
+/research/runtime_diagnosis.md
+/research/local_references_extract.txt
+/research/requirements_extracted.txt

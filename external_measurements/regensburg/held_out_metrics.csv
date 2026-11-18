@@ -1,0 +1,4 @@
+coil,method,test_points,first_test_mm,last_test_mm,decay_length_mm,RMSE_mT,relative_L2_percent
+C-B60,distance_exponential,30,41,70,19.1831472842408,8.06448654502278,25.8115149422993
+C-B60,CCD_normal_anchored_10mm,30,41,70,NaN,7.49026153923656,23.9736276528425
+D-B80,distance_exponential,30,41,70,27.6420092403376,6.35569168177758,7.30767586630998

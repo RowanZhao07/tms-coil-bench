@@ -1,0 +1,19 @@
+{
+  "source_segments": 3840,
+  "current_A": 1000.0,
+  "mu0_H_per_m": 1.2566370614359173e-06,
+  "source_sha256": "67b4c05fdaf6f27abe4408093d480729346164798fe90bd1b2967378261669fd",
+  "field_reference": "Existing MATLAB exact polygonal-wire results; read only after FEM solves",
+  "boundary": "All components of A=0 on six cube faces",
+  "source": "Closed filament line measure, cellwise exact two-point Gauss on Q1 test functions",
+  "equation": "-Laplacian(A) = mu0 J, homogeneous permeability, divergence-free closed source",
+  "finite_element": "Tensor-product trilinear conforming hexahedra, consistent Q1 matrices",
+  "curl_recovery": "Average nodal gradient and trilinear interpolation from nodal values",
+  "residual_vs_assembled_Q1": 3.6230344591760666e-16,
+  "n_roi": 3571,
+  "peak_process_working_set_bytes": 6340055040,
+  "python": "3.13.5",
+  "numpy": "2.2.5",
+  "scipy": "1.18.1",
+  "fft_workers": 4
+}

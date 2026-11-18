@@ -1,0 +1,16 @@
+{
+  "coil": "circular",
+  "turns": 18,
+  "current_per_turn_A": 1000.0,
+  "wire_radius_m": 0.002,
+  "domain_radius_m": 0.8,
+  "nodes": 41493,
+  "triangles": 82528,
+  "gmsh_seconds": 1.9579354000015883,
+  "getdp_seconds": 4.2206256999998,
+  "getdp_reported_memory_MB": 177.789,
+  "max_abs_FEM_vs_MATLAB_pct": 0.05719997491276458,
+  "max_abs_FEM_vs_finite_cross_pct": 0.029605943888168368,
+  "max_abs_MATLAB_vs_filament_pct": 0.00795927789029706,
+  "note": "Independent FEM of 18 finite circular wire cross-sections; MATLAB model is 192-segment polygonal filaments. Each turn separately normalized to 1000 A. This additional case has not undergone its own mesh convergence sweep."
+}

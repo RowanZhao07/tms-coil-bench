@@ -1,0 +1,7 @@
+{
+  "cpu_s": 0.1661561,
+  "gpu_s": 0.1866651,
+  "gpu_relative_error": 0,
+  "gpu_status": "executed",
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}
