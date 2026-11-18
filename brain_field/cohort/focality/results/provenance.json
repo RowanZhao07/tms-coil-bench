@@ -1,0 +1,168 @@
+{
+  "source": "Previously solved 100 A/us quasi-static SimNIBS total element E vector fields (V/m)",
+  "simnibs_version": "4.6.0",
+  "source_drive_A_per_us": 100.0,
+  "condition_reference_V_m": {
+    "cortex_P99_30": 30.0,
+    "target_mean_1": 1.0
+  },
+  "primary_absolute_threshold_V_m": 15.0,
+  "sensitivity_absolute_thresholds_V_m": [
+    1.0,
+    7.5,
+    15.0,
+    22.5,
+    30.0,
+    45.0,
+    60.0
+  ],
+  "threshold_comparison": "inclusive >=",
+  "volume_units": "cm3",
+  "percent_definition": "100 * above-threshold volume / full mask volume",
+  "masks": {
+    "cortex": "GM tetrahedra with subject native FreeSurfer labels 3 or 42",
+    "brain": "all GM and WM tetrahedra (SimNIBS tissue tags 2 and 1)",
+    "target": "native left thalamus label 10 and GM tetrahedral barycentre within 5 mm of protocol centre",
+    "off_target": "brain mask minus target tetrahedra"
+  },
+  "curve_grid_V_m": "0..60 by 0.5; then 65,70,... to just above the condition-specific maximum brain |E|",
+  "percentile": "volume-weighted empirical inverse CDF, smallest field at >=99% cumulative cortical volume",
+  "shape_metric": "cortical volume at >=0.5 times its own volume-weighted cortical P99",
+  "subjects": {
+    "sub01": {
+      "mesh_sha256": "f8f34f6cef820ce5b2c7ecbfebf0c0c0a16bfe3134c77abf828cab998a1110c2",
+      "roi_sha256": "fdd0c3be74a109987c756f67b3382ef0f2743ccab4d24f2e71348e74b1a88d6e",
+      "placement_sha256": "4f8fd11dc6554b8ea781af398f2a64ef9c4116227bc3c65274cb6f684946401d",
+      "native_coordinates_sha256": "8daa7d51ce95d10455e3097a4a456b51e1d91e9a449fbd39900fbb2c9ebcb584",
+      "topology_sha256": "890445174c393ebca601eb9f7cef217ad03c4f69ce13b839368d6656556f2260",
+      "elements_cortex": 922101,
+      "elements_brain": 1597065,
+      "elements_target": 81,
+      "fields": {
+        "h1": {
+          "file_sha256": "c932433fa0b9a0bff9883bb95b4e73c3cc86023ff49a773d1f8b965968c55921",
+          "fixed_cortex_P99_V_m": 104.91441045709571,
+          "fixed_target_mean_V_m": 12.263802126681842
+        },
+        "double_cone": {
+          "file_sha256": "ecc28984cce5222eddcc2ea064f650abb8c18bfc3d243664ae14fa64a66eab0b",
+          "fixed_cortex_P99_V_m": 76.32169978626453,
+          "fixed_target_mean_V_m": 2.017986824506499
+        },
+        "figure8": {
+          "file_sha256": "feb2b462feebd971837da6ef5b3176283aebf0f098fb8bb1210a6a925df5e995",
+          "fixed_cortex_P99_V_m": 35.44203768295556,
+          "fixed_target_mean_V_m": 0.7943797533419402
+        }
+      }
+    },
+    "sub09": {
+      "mesh_sha256": "85fecee81f7728ebcc1f567bb5b1da0a9aa694788041b3152dc867373bd74242",
+      "roi_sha256": "890a1070d950aa4c8e3f4cb2f9ce4ee4f901f720b886ca914891e7063fa3e54d",
+      "placement_sha256": "6ec7702a66d5a35e1f238981b2e1f232ae84e615283ce444c296e680509adafd",
+      "native_coordinates_sha256": "4d51d002e877c6dea6129ce43e5535f66ed1f81b8ad35b91c1b01bfa49dba5c2",
+      "topology_sha256": "b7ad1d3075d95d427c7b455ebc3c7a1d0fc46cf1bb8efa002619eec35c0b9307",
+      "elements_cortex": 993467,
+      "elements_brain": 1655899,
+      "elements_target": 97,
+      "fields": {
+        "h1": {
+          "file_sha256": "c48378356ba7def72245e7ffbe3a6da02b78a50128a1cfb66be9aca6166e575e",
+          "fixed_cortex_P99_V_m": 115.04884344817994,
+          "fixed_target_mean_V_m": 12.914932453650309
+        },
+        "double_cone": {
+          "file_sha256": "c8f41c9fc80fed24bb1b88bb8c1b15d4b790030bcb0ecff188283fe5f1fa017d",
+          "fixed_cortex_P99_V_m": 80.07798180261808,
+          "fixed_target_mean_V_m": 2.5468250813596156
+        },
+        "figure8": {
+          "file_sha256": "dce5179cfc0af1f52a2d205bf203ef0af243e40cf47cc953fb6dac698fd53ab1",
+          "fixed_cortex_P99_V_m": 36.02862660752951,
+          "fixed_target_mean_V_m": 0.9347660221529516
+        }
+      }
+    },
+    "sub10": {
+      "mesh_sha256": "1c8ea9e8497903da206450ea38d0dce7bc1003d95e27b351516867ab4dc686bd",
+      "roi_sha256": "1485f76e67d3b6eb32421e3d741b8bf98c6fe7425d2e3f1ddf3411a8175d4e85",
+      "placement_sha256": "2cfbdb4668593dd9034045ba751b1737ce83a6f425c49b6e2211340480fecc77",
+      "native_coordinates_sha256": "9868a49114f8f09ae751c900bb58b8e04e49692cd3ac7bc671c3370d05c46e17",
+      "topology_sha256": "27a71a05be2a92e8490c9eca812719ca3d676ba66898131da65a45b1debe7eec",
+      "elements_cortex": 786084,
+      "elements_brain": 1389766,
+      "elements_target": 79,
+      "fields": {
+        "h1": {
+          "file_sha256": "5c4163a432690f08cc485d4a3524795b42562b015bd0858b6281b18f69732d9d",
+          "fixed_cortex_P99_V_m": 107.08865748568434,
+          "fixed_target_mean_V_m": 12.2699791310343
+        },
+        "double_cone": {
+          "file_sha256": "17cf50d6b3f952f45d71bbca5cd94173b3cf3ee73fc272074b75f8426a58400f",
+          "fixed_cortex_P99_V_m": 99.42866808949289,
+          "fixed_target_mean_V_m": 3.120044038599034
+        },
+        "figure8": {
+          "file_sha256": "3dbde7e0dd557ca3d2eacd6a3e6c7f971c05ad84dd5ee766217586bd2fefd093",
+          "fixed_cortex_P99_V_m": 37.17095352293482,
+          "fixed_target_mean_V_m": 1.0842531409348555
+        }
+      }
+    },
+    "sub12": {
+      "mesh_sha256": "5b382a56fa6b84bc101a0f3a587e04e883f0f44312fd69c130faa9f264018992",
+      "roi_sha256": "b05e7eb1e3e83282f86260bec454840a9014a870bc6e651e79365c99a0923f57",
+      "placement_sha256": "2f2adf01f7dabd9e64a6ee727c0b999f295147974eb8a9eff9bc21c2ad21de50",
+      "native_coordinates_sha256": "549e28afa2cec0768be32bbe80d606abdeb7e082246270574c075222f68e1592",
+      "topology_sha256": "5edffabbec61cebbe74c00d9748267e8a3dc5aede7efe7a4d6d7375b33dd9087",
+      "elements_cortex": 1060062,
+      "elements_brain": 1724291,
+      "elements_target": 97,
+      "fields": {
+        "h1": {
+          "file_sha256": "7ffdafb6cdb47819698e67cb3a48fd7d710f22d15f55fc4d1d2a38869c7790c6",
+          "fixed_cortex_P99_V_m": 117.19677443787172,
+          "fixed_target_mean_V_m": 13.73264907469582
+        },
+        "double_cone": {
+          "file_sha256": "30c70123b5bef84d83820f02998640aee32c7fb686c70eff1734c3fc453292a1",
+          "fixed_cortex_P99_V_m": 69.21943452437999,
+          "fixed_target_mean_V_m": 2.9548915102521933
+        },
+        "figure8": {
+          "file_sha256": "aff9cfdf77ec371a1e3ee8665ec8429a057f48adf37c0cb747411424303fce8b",
+          "fixed_cortex_P99_V_m": 31.519106276298633,
+          "fixed_target_mean_V_m": 1.0774232925648928
+        }
+      }
+    },
+    "sub15": {
+      "mesh_sha256": "3007c0dc8ede7d68a4bdc2fcd234bb88edfb76ce5e4145bfb192ab08a04cdd43",
+      "roi_sha256": "3f1daa68927f9a656e90f150d4ca3182bf9c2fd78878a48b14ad78afa4440b20",
+      "placement_sha256": "aed6f87bb9bd6e895893b0918c3dce7dca323dc7a1b50de5239b1cea78edbea9",
+      "native_coordinates_sha256": "926cc07150037e392c69a077d28f725a291549ee2427c83ca93480c1b2fe6d44",
+      "topology_sha256": "d01e62adf7781a8eef5b0f7e28f302eb8ad069e710ef81c34cca994226fb9c12",
+      "elements_cortex": 981771,
+      "elements_brain": 1674676,
+      "elements_target": 70,
+      "fields": {
+        "h1": {
+          "file_sha256": "9cf750d35c983cb0ea29fc7edd9d8a0f1740d939918c2559f7acbc210bf6dedd",
+          "fixed_cortex_P99_V_m": 117.81430338654808,
+          "fixed_target_mean_V_m": 11.421846805299717
+        },
+        "double_cone": {
+          "file_sha256": "bb63bd0e72c5e6304777ee179fd7ba91239db5b367b7351201a4f8aabd757712",
+          "fixed_cortex_P99_V_m": 84.27150469136333,
+          "fixed_target_mean_V_m": 2.622383372359912
+        },
+        "figure8": {
+          "file_sha256": "db28a6d977495e0044de53b1782d05a199775627b01c038dea392c3a99c17e1f",
+          "fixed_cortex_P99_V_m": 30.864598869392726,
+          "fixed_target_mean_V_m": 0.8065793993386593
+        }
+      }
+    }
+  }
+}

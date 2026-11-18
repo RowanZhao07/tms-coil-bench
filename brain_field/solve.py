@@ -60,7 +60,7 @@ def working_set_peak_mib():
     return peak / (2**20 if platform.system() == "Darwin" else 1024)
 
 
-def primary(mesh, coil, affine):
+def primary(mesh, coil, affine, target):
     """SimNIBS midpoint line-current kernel, evaluated with its FMM3D library."""
     if not all(isinstance(el, LineSegmentElements) for el in coil.elements):
         raise TypeError("Expected only directed line elements")
@@ -75,7 +75,6 @@ def primary(mesh, coil, affine):
     # Test against the native SimNIBS coil API and an explicit SI kernel at
     # reproducible head nodes, including nodes close to the deep target.
     rng = np.random.default_rng(7834)
-    target = np.asarray(json.loads((RESULTS / "placement.json").read_text("utf-8"))["target_center_mm"])
     close = np.argsort(np.linalg.norm(nodes - target, axis=1))[:16]
     idx = np.unique(np.r_[close, rng.choice(len(nodes), size=64, replace=False)])
     reference = DIDT * sum(el.get_a_field(nodes[idx], affine) for el in coil.elements)
@@ -92,14 +91,28 @@ def primary(mesh, coil, affine):
     return mesh_io.NodeData(values, name="D", mesh=mesh).node_data2elm_data(), audit
 
 
-def main():
+def solve_current(system, free_dof, dadt):
+    rhs = system.assemble_rhs(dadt)
+    potential = system.solve(rhs)
+    ksp = system._solver.ksp
+    residual = (system.A @ potential - rhs)[free_dof]
+    normalized = float(np.linalg.norm(residual) / np.linalg.norm(rhs[free_dof]))
+    status = int(ksp.getConvergedReason())
+    if status <= 0 or not np.isfinite(normalized) or normalized > 1e-6:
+        raise RuntimeError(f"FEM failed: PETSc reason {status}, relative residual {normalized}")
+    return potential, dict(free_dof_relative_residual=normalized,
+                           ksp_iterations=int(ksp.getIterationNumber()), ksp_converged_reason=status)
+
+
+def solve_subject(head_path, placement_file, coil_dir, results_dir, expected_mesh_hash=None, second_drive=None):
+    """Solve all windings on a shared matrix and optionally verify a second drive per coil."""
     start = time.perf_counter()
-    head_path = WORK / "m2m_Subject01" / "Subject01.msh"
-    spec = json.loads((HERE / "head_inputs.json").read_text(encoding="utf-8"))
-    if hash_file(head_path) != spec["Subject01.msh"]["sha256"]:
-        raise ValueError("Head checksum does not match head_inputs.json")
+    mesh_digest = hash_file(head_path)
+    if expected_mesh_hash is not None and mesh_digest != expected_mesh_hash:
+        raise ValueError("Head checksum does not match the expected mesh")
     mesh = mesh_io.read_msh(str(head_path))
-    pose = json.loads((RESULTS / "placement.json").read_text(encoding="utf-8"))
+    pose = json.loads(placement_file.read_text(encoding="utf-8"))
+    target = np.asarray(pose["target_center_mm"])
     cond_list = cond_utils.standard_cond()
     cond = cond_utils.cond2elmdata(mesh, [c.value for c in cond_list])
     volume_tags = np.unique(mesh.elm.tag1[mesh.elm.elm_type == 4])
@@ -114,43 +127,44 @@ def main():
               "runtime_packages": {key: importlib.metadata.version(key) for key in ("numpy", "scipy", "fmm3dpy", "petsc4py")},
               "ksp_relative_tolerance": float(system._solver.ksp.getTolerances()[0]),
               "D_definition": "tetrahedron mean of four nodal dA/dt vectors in V/m; primary E is -D",
-              "mesh_sha256": spec["Subject01.msh"]["sha256"], "mesh_nodes": mesh.nodes.nr,
+              "mesh_sha256": mesh_digest, "mesh_nodes": mesh.nodes.nr,
+              "placement_sha256": hash_file(placement_file),
               "tetrahedra": int(np.count_nonzero(mesh.elm.elm_type == 4)), "didt_A_per_s": DIDT,
               "conductivity_S_per_m": {int(t): {"tissue": cond_list[t-1].name, "value": cond_list[t-1].value} for t in volume_tags},
               "ground_nodes_one_based": np.atleast_1d(system.dirichlet.nodes).tolist(),
               "common_setup_s": time.perf_counter()-start, "coils": {}}
-    results_dir = WORK / "fields"
     results_dir.mkdir(parents=True, exist_ok=True)
     for key in ("h1", "figure8", "double_cone"):
         begin = time.perf_counter()
         affine = np.asarray(pose["coils"][key]["source_to_head_mm"])
-        coil_file = WORK / "coils" / f"{key}.tcd"
+        coil_file = coil_dir / f"{key}.tcd"
         coil = TmsCoil.from_file(str(coil_file))
         print(f"Evaluating {key} coil and checking primary field", flush=True)
-        dadt, audit = primary(mesh, coil, affine)
+        dadt, audit = primary(mesh, coil, affine, target)
         primary_s = time.perf_counter() - begin
-        rhs = system.assemble_rhs(dadt)
-        potential = system.solve(rhs)
-        ksp = system._solver.ksp
-        status = int(ksp.getConvergedReason())
-        residual = (system.A @ potential - rhs)[free_dof]
-        normalized = float(np.linalg.norm(residual) / np.linalg.norm(rhs[free_dof]))
-        if status <= 0 or normalized > 1e-6:
-            raise RuntimeError(f"FEM failed: {key}, {status}, {normalized}")
+        potential, convergence = solve_current(system, free_dof, dadt)
         v = mesh_io.NodeData(potential, name="v", mesh=mesh)
         out = fem.calc_fields(v, "EeD", cond=cond, dadt=dadt)
         temp = results_dir / f"{key}.part.msh"
         mesh_io.write_msh(out, str(temp))
         os.replace(temp, results_dir / f"{key}.msh")
-        record["coils"][key] = dict(audit, tcd_sha256=hash_file(coil_file), primary_seconds=primary_s,
-            elapsed_seconds=time.perf_counter()-begin, free_dof_relative_residual=normalized,
-            ksp_iterations=int(ksp.getIterationNumber()), ksp_converged_reason=status,
+        record["coils"][key] = dict(audit, **convergence, tcd_sha256=hash_file(coil_file),
+            primary_seconds=primary_s, elapsed_seconds=time.perf_counter()-begin,
             process_peak_rss_MiB_so_far=working_set_peak_mib())
+        if second_drive is not None:
+            second_drive(key, mesh, cond, system, free_dof, dadt, out)
         print(key, record["coils"][key], flush=True)
-        del out, dadt, v, rhs, potential
+        del out, dadt, v, potential
         gc.collect()
     record["process_peak_rss_MiB"] = working_set_peak_mib()
     record["elapsed_seconds"] = time.perf_counter()-start
+    return record
+
+
+def main():
+    spec = json.loads((HERE / "head_inputs.json").read_text(encoding="utf-8"))
+    record = solve_subject(WORK / "m2m_Subject01" / "Subject01.msh", RESULTS / "placement.json",
+                           WORK / "coils", WORK / "fields", spec["Subject01.msh"]["sha256"])
     (RESULTS / "solver_run.json").write_text(json.dumps(record, indent=2)+"\n", encoding="utf-8")
 
 

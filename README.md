@@ -183,6 +183,7 @@ $$
 | 一只线圈的坐标、假设和指标 | [几何清单](geometry_manifest.json) · [MATLAB 线元求解](matlab/field_segments.m) · [指标总表](results/metrics.csv) |
 | 核对旧版、新版、只改 z 平移的差别 | [MRI 原始对照与本地复算](placement_pilot/public_benchmark/matched_figure8/README.md) |
 | 独立复算三维场或球面摆位 | [放置基准与有限元](placement_pilot/README.md) · [三维双锥收敛](placement_pilot/fem3d/README.md) |
+| 比较五个头模的左丘脑电场与皮层高场范围 | [深部电场与皮层 P99 匹配](brain_field/cohort/实验记录.md) · [聚焦性与阈值敏感性](brain_field/cohort/focality/实验记录.md) |
 | 八组实测复跑或三组方法消融 | [测量复跑入口](external_measurements/run_external_measurements.m) · [方法消融入口](external_measurements/run_method_experiments.m) |
 
 已验证环境为 Windows、MATLAB R2025a、Python 3.13、Magpylib 6.3.0、Gmsh 4.15.2、GetDP 3.5.0。主空气场计算可用 RTX 4060 Laptop 8 GB，参数反演使用 CPU。首次复跑需联网获取按版本或校验值锁定的上游输入。以下 PowerShell 命令都从仓库根目录执行。

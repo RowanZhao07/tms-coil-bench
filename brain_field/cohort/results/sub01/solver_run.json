@@ -1,0 +1,117 @@
+{
+  "simnibs_version": "4.6.0",
+  "python_version": "3.11.14",
+  "solver": "SimNIBS TMSFEM, PETSc CG + HYPRE BoomerAMG",
+  "platform": "Windows",
+  "threads_requested": 8,
+  "parallel_coils": 1,
+  "gpu_used": false,
+  "runtime_packages": {
+    "numpy": "2.3.0",
+    "scipy": "1.17.1",
+    "fmm3dpy": "1.0.4",
+    "petsc4py": "3.22.2"
+  },
+  "ksp_relative_tolerance": 1e-10,
+  "D_definition": "tetrahedron mean of four nodal dA/dt vectors in V/m; primary E is -D",
+  "mesh_sha256": "f8f34f6cef820ce5b2c7ecbfebf0c0c0a16bfe3134c77abf828cab998a1110c2",
+  "mesh_nodes": 719005,
+  "placement_sha256": "4f8fd11dc6554b8ea781af398f2a64ef9c4116227bc3c65274cb6f684946401d",
+  "tetrahedra": 4020071,
+  "didt_A_per_s": 100000000.0,
+  "conductivity_S_per_m": {
+    "1": {
+      "tissue": "WM",
+      "value": 0.126
+    },
+    "2": {
+      "tissue": "GM",
+      "value": 0.275
+    },
+    "3": {
+      "tissue": "CSF",
+      "value": 1.654
+    },
+    "5": {
+      "tissue": "Scalp",
+      "value": 0.465
+    },
+    "6": {
+      "tissue": "Eye_balls",
+      "value": 0.5
+    },
+    "7": {
+      "tissue": "Compact_bone",
+      "value": 0.008
+    },
+    "8": {
+      "tissue": "Spongy_bone",
+      "value": 0.025
+    },
+    "9": {
+      "tissue": "Blood",
+      "value": 0.6
+    },
+    "10": {
+      "tissue": "Muscle",
+      "value": 0.16
+    }
+  },
+  "ground_nodes_one_based": [
+    568569
+  ],
+  "common_setup_s": 34.300339299999905,
+  "coils": {
+    "h1": {
+      "segments": 14895,
+      "validation_nodes": 80,
+      "fmm_requested_eps": 1e-08,
+      "fmm_vs_native_rel_L2": 1.796220039281252e-11,
+      "fmm_vs_explicit_SI_rel_L2": 1.796218593213568e-11,
+      "fmm_vs_native_max_difference_V_per_m": 2.7851357195972293e-09,
+      "free_dof_relative_residual": 1.6915777838562582e-10,
+      "ksp_iterations": 36,
+      "ksp_converged_reason": 2,
+      "tcd_sha256": "a121815103636db210b96fca5005f6a62886eb5242b74975865b7ffefa19ca5a",
+      "primary_seconds": 5.9568793999969785,
+      "elapsed_seconds": 23.64694099999906,
+      "process_peak_rss_MiB_so_far": 2065.58203125
+    },
+    "figure8": {
+      "segments": 9216,
+      "validation_nodes": 80,
+      "fmm_requested_eps": 1e-08,
+      "fmm_vs_native_rel_L2": 6.354979727671846e-11,
+      "fmm_vs_explicit_SI_rel_L2": 6.354951083521489e-11,
+      "fmm_vs_native_max_difference_V_per_m": 2.369562996421556e-09,
+      "free_dof_relative_residual": 1.918719144921517e-10,
+      "ksp_iterations": 36,
+      "ksp_converged_reason": 2,
+      "tcd_sha256": "5167afda8497455653a57b765c14a3469904878177e9203863c449d81f34605e",
+      "primary_seconds": 4.155271700001322,
+      "elapsed_seconds": 22.493852100000367,
+      "process_peak_rss_MiB_so_far": 3045.6953125
+    },
+    "double_cone": {
+      "segments": 3840,
+      "validation_nodes": 80,
+      "fmm_requested_eps": 1e-08,
+      "fmm_vs_native_rel_L2": 7.373696972615044e-11,
+      "fmm_vs_explicit_SI_rel_L2": 7.373725245724932e-11,
+      "fmm_vs_native_max_difference_V_per_m": 6.716903798332074e-09,
+      "free_dof_relative_residual": 2.2091168334193962e-10,
+      "ksp_iterations": 36,
+      "ksp_converged_reason": 2,
+      "tcd_sha256": "17009192234ce369a42f38cee34a1b60093ec5ddae9497633767bbcdbbe2257d",
+      "primary_seconds": 4.425827999999456,
+      "elapsed_seconds": 22.636466199997813,
+      "process_peak_rss_MiB_so_far": 3198.83203125
+    }
+  },
+  "process_peak_rss_MiB": 3199.27734375,
+  "elapsed_seconds": 158.1977110000007,
+  "subject": "sub01",
+  "paired_drive_CortexP99_V_m": 30.0,
+  "roi_file_sha256": "fdd0c3be74a109987c756f67b3382ef0f2743ccab4d24f2e71348e74b1a88d6e",
+  "peak_includes_both_drives": true
+}

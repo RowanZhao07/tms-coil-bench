@@ -1,0 +1,51 @@
+{
+  "subject": "sub15",
+  "space": "subject MRI world RAS, mm",
+  "target": "left thalamus",
+  "target_label": 10,
+  "gm_tissue_tag": 2,
+  "anatomical_centroid_ras_mm": [
+    -3.484108146618448,
+    -40.176983980965346,
+    -22.134166708080322
+  ],
+  "center_ras_mm": [
+    -3.264516268724705,
+    -40.25301843277148,
+    -22.09903311650325
+  ],
+  "radius_mm": 5.0,
+  "center_rule": "label-10 voxel centre nearest to the centroid of all label-10 voxel centres",
+  "element_rule": "tetrahedron barycentre inside sphere, mesh GM, nearest anatomical voxel has label 10",
+  "cortical_reference": "mesh GM, nearest anatomical voxel has label 3 or 42 (bilateral cerebral cortex)",
+  "roi_element_count": 70,
+  "roi_volume_mm3": 523.5462623895655,
+  "cortical_element_count": 981771,
+  "cortical_volume_mm3": 477937.5342932292,
+  "thalamus_label_voxels": 4761,
+  "thalamus_mesh_gm_volume_mm3": 5386.370042379595,
+  "topology_sha256": "d01e62adf7781a8eef5b0f7e28f302eb8ad069e710ef81c34cca994226fb9c12",
+  "sensitivity_radii_mm": [
+    3.0,
+    5.0,
+    7.5
+  ],
+  "mesh_sha256": "3007c0dc8ede7d68a4bdc2fcd234bb88edfb76ce5e4145bfb192ab08a04cdd43",
+  "labels_sha256": "1faf7f97ef3f71dd2dfdd3abff0b9546850f0d282c32f2892d9fed398a4c3f1d",
+  "label_registration": {
+    "left_thalamus_center_ras_mm": [
+      -3.484108146618425,
+      -40.17698398096539,
+      -22.1341667080803
+    ],
+    "right_thalamus_center_ras_mm": [
+      12.335643533148428,
+      -39.37141470391788,
+      -20.939233262603864
+    ],
+    "white_matter_checked_elements": 20000,
+    "white_matter_fraction_with_cerebral_label": 0.73535,
+    "gray_matter_checked_elements": 20000,
+    "gray_matter_fraction_with_cerebral_label": 0.8122
+  }
+}

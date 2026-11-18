@@ -1,0 +1,148 @@
+{
+  "dataset": "SimNIBS Group Data Tutorial",
+  "openfmri_accession": "ds000171",
+  "project": "https://osf.io/ah5eu/",
+  "license": "ODC-PDDL, according to the archive readme.txt, version 1.1, A. Thielscher (December 2024)",
+  "archive_url": "https://osf.io/download/5ysve/?version=1",
+  "archive_sha256_from_osf_metadata": "7e23ae6dffc977cf6a17b85bc1a76ff78cc268b374840ac01a303e27bc27d4a8",
+  "archive_bytes": 2702041298,
+  "osf_file_version": 1,
+  "metadata_url": "https://api.osf.io/v2/files/67924bd292857151d1df2e56/",
+  "dataset_version": "1.1",
+  "mesh_construction": "FreeSurfer cortical reconstruction followed by CHARM; each archived charm_log.html reports SimNIBS 4.1.0.",
+  "group_tutorial": "https://simnibs.github.io/simnibs/build/html/tutorial/advanced/group_analysis.html",
+  "source_mri": "https://openneuro.org/datasets/ds000171",
+  "release_note": "Readme release 1.1 improved tetrahedral quality and gray matter surfaces. Member SHA-256 values were computed after verifying selected ZIP CRC32 values. The whole archive was not downloaded.",
+  "subjects": {
+    "sub01": {
+      "segmentation/labeling.nii.gz": {
+        "path": "m2m_sub01/segmentation/labeling.nii.gz",
+        "bytes": 589130,
+        "crc32": "dfe3bebf",
+        "sha256": "c91a5d183d76eda0b5ea3b849c58a07a14c5557f5c799b995c6b80a79017795e"
+      },
+      "segmentation/labeling_LUT.txt": {
+        "path": "m2m_sub01/segmentation/labeling_LUT.txt",
+        "bytes": 2490,
+        "crc32": "86010b5e",
+        "sha256": "8ccb6be9e7000e60fe27b9553227fa5b344c6f213ec1f609eeb3b2fca59d69ca"
+      },
+      "sub01.msh": {
+        "path": "m2m_sub01/sub01.msh",
+        "bytes": 157082567,
+        "crc32": "5966a63d",
+        "sha256": "f8f34f6cef820ce5b2c7ecbfebf0c0c0a16bfe3134c77abf828cab998a1110c2"
+      },
+      "T1.nii.gz": {
+        "path": "m2m_sub01/T1.nii.gz",
+        "bytes": 11635638,
+        "crc32": "92ab9500",
+        "sha256": "cfbb299ad45dfa11291f9e9343bd5a5c7ce1b55e4e3adaafd7937edd2709ead6"
+      }
+    },
+    "sub09": {
+      "segmentation/labeling.nii.gz": {
+        "path": "m2m_sub09/segmentation/labeling.nii.gz",
+        "bytes": 519740,
+        "crc32": "602b79c4",
+        "sha256": "053389e2e25b4c91ce950b69567bd0be05fc7e522d89272d4766334aeb17cc36"
+      },
+      "segmentation/labeling_LUT.txt": {
+        "path": "m2m_sub09/segmentation/labeling_LUT.txt",
+        "bytes": 2490,
+        "crc32": "86010b5e",
+        "sha256": "8ccb6be9e7000e60fe27b9553227fa5b344c6f213ec1f609eeb3b2fca59d69ca"
+      },
+      "sub09.msh": {
+        "path": "m2m_sub09/sub09.msh",
+        "bytes": 152425883,
+        "crc32": "e335b674",
+        "sha256": "85fecee81f7728ebcc1f567bb5b1da0a9aa694788041b3152dc867373bd74242"
+      },
+      "T1.nii.gz": {
+        "path": "m2m_sub09/T1.nii.gz",
+        "bytes": 10511694,
+        "crc32": "ab21ada8",
+        "sha256": "168a6348e56f7ef109c0b44c6b082b3f8d479a0bebf5ea435bbb9244493b4ec9"
+      }
+    },
+    "sub10": {
+      "segmentation/labeling.nii.gz": {
+        "path": "m2m_sub10/segmentation/labeling.nii.gz",
+        "bytes": 486974,
+        "crc32": "04c13569",
+        "sha256": "4de53350e2ed50339e53b642859683b747409a91bfcd217f7fab5a078eeba878"
+      },
+      "segmentation/labeling_LUT.txt": {
+        "path": "m2m_sub10/segmentation/labeling_LUT.txt",
+        "bytes": 2490,
+        "crc32": "86010b5e",
+        "sha256": "8ccb6be9e7000e60fe27b9553227fa5b344c6f213ec1f609eeb3b2fca59d69ca"
+      },
+      "sub10.msh": {
+        "path": "m2m_sub10/sub10.msh",
+        "bytes": 141525139,
+        "crc32": "a9684aa8",
+        "sha256": "1c8ea9e8497903da206450ea38d0dce7bc1003d95e27b351516867ab4dc686bd"
+      },
+      "T1.nii.gz": {
+        "path": "m2m_sub10/T1.nii.gz",
+        "bytes": 9782488,
+        "crc32": "f50d1481",
+        "sha256": "3adb1b982efc882a6f94edf3fcc4784fbd00be468c61a45faabec0b9863a171e"
+      }
+    },
+    "sub12": {
+      "segmentation/labeling.nii.gz": {
+        "path": "m2m_sub12/segmentation/labeling.nii.gz",
+        "bytes": 557046,
+        "crc32": "f32337a5",
+        "sha256": "df9746454a95f25e4cd2992e0e8160fb1e81bf23b027467d134d11d960987feb"
+      },
+      "segmentation/labeling_LUT.txt": {
+        "path": "m2m_sub12/segmentation/labeling_LUT.txt",
+        "bytes": 2490,
+        "crc32": "86010b5e",
+        "sha256": "8ccb6be9e7000e60fe27b9553227fa5b344c6f213ec1f609eeb3b2fca59d69ca"
+      },
+      "sub12.msh": {
+        "path": "m2m_sub12/sub12.msh",
+        "bytes": 165715819,
+        "crc32": "85def47d",
+        "sha256": "5b382a56fa6b84bc101a0f3a587e04e883f0f44312fd69c130faa9f264018992"
+      },
+      "T1.nii.gz": {
+        "path": "m2m_sub12/T1.nii.gz",
+        "bytes": 10809803,
+        "crc32": "395adc4b",
+        "sha256": "53f72d0ce39f80ff86fef5fefbfc962d8feae34f91cb40285ba04b03349196da"
+      }
+    },
+    "sub15": {
+      "segmentation/labeling.nii.gz": {
+        "path": "m2m_sub15/segmentation/labeling.nii.gz",
+        "bytes": 556358,
+        "crc32": "2ecfcaca",
+        "sha256": "1faf7f97ef3f71dd2dfdd3abff0b9546850f0d282c32f2892d9fed398a4c3f1d"
+      },
+      "segmentation/labeling_LUT.txt": {
+        "path": "m2m_sub15/segmentation/labeling_LUT.txt",
+        "bytes": 2490,
+        "crc32": "86010b5e",
+        "sha256": "8ccb6be9e7000e60fe27b9553227fa5b344c6f213ec1f609eeb3b2fca59d69ca"
+      },
+      "sub15.msh": {
+        "path": "m2m_sub15/sub15.msh",
+        "bytes": 157951163,
+        "crc32": "64e0bb0b",
+        "sha256": "3007c0dc8ede7d68a4bdc2fcd234bb88edfb76ce5e4145bfb192ab08a04cdd43"
+      },
+      "T1.nii.gz": {
+        "path": "m2m_sub15/T1.nii.gz",
+        "bytes": 10677009,
+        "crc32": "9b36a434",
+        "sha256": "77c2bb84c9e6b45f291aa36e7c3e2dd9a5c220c1e97197ec6d974c872b94ae72"
+      }
+    }
+  }
+}

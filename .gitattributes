@@ -5,6 +5,8 @@
 # Preserve byte checksums of measured and exported numeric inputs across OSes.
 *.csv -text
 *.json text eol=lf
+# These per-subject poses are hashed byte-for-byte in the FEM run records.
+brain_field/cohort/results/*/placement.json -text !eol
 *.ps1 text eol=crlf
 *.mat binary
 *.png binary
